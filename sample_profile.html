@@ -1,0 +1,869 @@
+7<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JL Boutique</title>
+
+<!-- LETRAS ELEGANTES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#fffafa;
+    color:#542c35;
+    font-family:'Cormorant Garamond',serif;
+}
+
+/* BARRA SUPERIOR */
+
+.top{
+    height:42px;
+    background:#f9dfe6;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    font-size:16px;
+}
+
+/* ENCABEZADO */
+
+header{
+    height:140px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    position:relative;
+    border-bottom:1px solid #f1d8de;
+}
+
+/* LOGO */
+
+.logo{
+    text-align:center;
+    min-width:230px;
+    position:relative;
+}
+
+.logo::before{
+    content:"🌸";
+    position:absolute;
+    left:-25px;
+    top:5px;
+    font-size:30px;
+}
+
+.logo::after{
+    content:"🌸";
+    position:absolute;
+    right:-25px;
+    bottom:0;
+    font-size:30px;
+}
+
+.logo-jl{
+    font-family:'Great Vibes',cursive;
+    font-size:75px;
+    color:#c49a42;
+    line-height:65px;
+}
+
+.logo-name{
+    font-size:18px;
+    letter-spacing:8px;
+    color:#623640;
+}
+
+/* MENU */
+
+nav{
+    display:flex;
+    gap:42px;
+}
+
+nav a{
+    color:#542c35;
+    text-decoration:none;
+    font-size:18px;
+}
+
+nav a:hover{
+    color:#d86c88;
+}
+
+/* ICONOS */
+
+.icons{
+    display:flex;
+    gap:22px;
+    font-size:26px;
+}
+
+.carrito{
+    position:relative;
+}
+
+.numero{
+    position:absolute;
+    background:#d86683;
+    color:white;
+    font-size:11px;
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    top:-8px;
+    right:-9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* PORTADA */
+
+.hero{
+    min-height:390px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,220,230,.95),
+        rgba(255,235,240,.60)
+    ),
+    url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding-left:12%;
+}
+
+.hero-content{
+    text-align:center;
+    width:500px;
+}
+
+.hero-jl{
+    font-family:'Great Vibes',cursive;
+    font-size:115px;
+    color:#b88a36;
+    line-height:90px;
+}
+
+.hero-boutique{
+    font-size:28px;
+    letter-spacing:10px;
+    color:#542c35;
+}
+
+.hero p{
+    font-family:'Great Vibes',cursive;
+    font-size:42px;
+    color:#8b3d50;
+    margin:15px 0 25px;
+}
+
+.boton{
+    display:inline-block;
+    background:#db6685;
+    color:white;
+    padding:13px 32px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:18px;
+}
+
+/* CATEGORÍAS */
+
+.categorias{
+    padding:35px 5%;
+    background:white;
+}
+
+.categoria-lista{
+    display:flex;
+    justify-content:center;
+    gap:45px;
+    flex-wrap:wrap;
+}
+
+.categoria{
+    text-align:center;
+}
+
+.circulo{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    border:1px solid #c9a05a;
+    background:#fde9ee;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:55px;
+    margin:auto auto 10px;
+}
+
+.categoria p{
+    font-size:19px;
+}
+
+/* TITULO */
+
+.titulo{
+    text-align:center;
+    margin:15px 0 30px;
+}
+
+.titulo h2{
+    font-family:'Great Vibes',cursive;
+    font-size:48px;
+    font-weight:normal;
+}
+
+.titulo span{
+    color:#c49a42;
+}
+
+/* PRODUCTOS */
+
+.productos{
+    padding:10px 4% 55px;
+}
+
+.grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.producto{
+    background:white;
+    border:1px solid #ead7dc;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+    padding-bottom:15px;
+}
+
+.foto{
+    height:270px;
+    background:#fbe4e9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+}
+
+.etiqueta{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#dc6785;
+    color:white;
+    padding:5px 10px;
+    border-radius:8px;
+}
+
+.corazon{
+    position:absolute;
+    top:10px;
+    right:12px;
+    font-size:24px;
+    color:#c74e6d;
+}
+
+.info{
+    text-align:center;
+    padding:12px;
+}
+
+.info h3{
+    font-size:18px;
+}
+
+.precio{
+    font-size:20px;
+    font-weight:bold;
+    margin:7px;
+}
+
+.tallas{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+    margin:10px;
+}
+
+.talla{
+    border:1px solid #d9c1c8;
+    padding:4px 9px;
+    border-radius:7px;
+}
+
+.agregar{
+    width:90%;
+    border:0;
+    background:#dc6684;
+    color:white;
+    padding:11px;
+    border-radius:7px;
+    font-family:inherit;
+    font-size:16px;
+}
+
+/* BENEFICIOS */
+
+.beneficios{
+    background:#fbe7ec;
+    padding:30px 5%;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.beneficio{
+    background:#fff4f6;
+    width:30%;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border-radius:10px;
+}
+
+.beneficio-icono{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#fbd8e1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+/* CONTACTO */
+
+.contacto{
+    background:#f9dce4;
+    padding:35px 7%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.contacto h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.contacto p{
+    font-size:17px;
+    margin:5px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:60px;
+    height:60px;
+
+    background:#25d366;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+    text-decoration:none;
+
+    box-shadow:0 4px 15px #999;
+}
+
+/* PIE */
+
+footer{
+    background:#d6607d;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:17px;
+}
+
+/* CELULAR / IPAD */
+
+@media(max-width:900px){
+
+    header{
+        height:auto;
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .beneficios{
+        flex-direction:column;
+    }
+
+    .beneficio{
+        width:100%;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .top{
+        height:auto;
+        padding:8px;
+        flex-direction:column;
+        gap:4px;
+    }
+
+    .hero{
+        padding:30px 10px;
+        justify-content:center;
+    }
+
+    .hero-jl{
+        font-size:80px;
+    }
+
+    .hero p{
+        font-size:32px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .contacto{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BARRA SUPERIOR -->
+
+<div class="top">
+    <div>🚚 Envíos a todo México</div>
+    <div>🛡️ Pagos seguros</div>
+    <div>💬 Atención personalizada</div>
+</div>
+
+
+<!-- ENCABEZADO -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-jl">JL</div>
+
+        <div class="logo-name">
+            BOUTIQUE
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="icons">
+        🔍
+        ♡
+        <div class="carrito">
+            🛍️
+            <span class="numero" id="contador">0</span>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- PORTADA -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-jl">
+            JL
+        </div>
+
+        <div class="hero-boutique">
+            BOUTIQUE
+        </div>
+
+        <p>
+            Moda que florece contigo
+        </p>
+
+        <a href="#tienda" class="boton">
+            Ver colección →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORÍAS -->
+
+<section class="categorias">
+
+    <div class="categoria-lista">
+
+        <div class="categoria">
+            <div class="circulo">👚</div>
+            <p>Blusas ›</p>
+        </div>
+
+        <div class="categoria">
+            <div class="circulo">👗</div>
+            <p>Vestidos ›</p>
+        </div>
+
+        <div class="categoria">
+            <div class="circulo">👖</div>
+            <p>Pantalones ›</p>
+        </div>
+
+        <div class="categoria">
+            <div class="circulo">👟</div>
+            <p>Calzado ›</p>
+        </div>
+
+        <div class="categoria">
+            <div class="circulo">👜</div>
+            <p>Accesorios ›</p>
+        </div>
+
+        <div class="categoria">
+            <div class="circulo">♡</div>
+            <p>Novedades ›</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTOS -->
+
+<section class="productos" id="tienda">
+
+    <div class="titulo">
+        <h2>
+            <span>♡</span>
+            Productos destacados
+            <span>♡</span>
+        </h2>
+    </div>
+
+    <div class="grid">
+
+
+        <!-- PRODUCTO 1 -->
+
+        <div class="producto">
+
+            <span class="etiqueta">Nuevo</span>
+            <span class="corazon">♡</span>
+
+            <div class="foto">
+                👚
+            </div>
+
+            <div class="info">
+
+                <h3>Blusa Encaje</h3>
+
+                <div class="precio">
+                    $349.00
+                </div>
+
+                <div class="tallas">
+                    <span class="talla">CH</span>
+                    <span class="talla">M</span>
+                    <span class="talla">G</span>
+                    <span class="talla">XG</span>
+                </div>
+
+                <button class="agregar" onclick="agregar()">
+                    🛒 Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 2 -->
+
+        <div class="producto">
+
+            <span class="etiqueta">Más vendido</span>
+            <span class="corazon">♡</span>
+
+            <div class="foto">
+                👗
+            </div>
+
+            <div class="info">
+
+                <h3>Vestido Primavera</h3>
+
+                <div class="precio">
+                    $499.00
+                </div>
+
+                <div class="tallas">
+                    <span class="talla">CH</span>
+                    <span class="talla">M</span>
+                    <span class="talla">G</span>
+                    <span class="talla">XG</span>
+                </div>
+
+                <button class="agregar" onclick="agregar()">
+                    🛒 Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 3 -->
+
+        <div class="producto">
+
+            <span class="etiqueta">Nuevo</span>
+            <span class="corazon">♡</span>
+
+            <div class="foto">
+                👖
+            </div>
+
+            <div class="info">
+
+                <h3>Pantalón Wide Leg</h3>
+
+                <div class="precio">
+                    $449.00
+                </div>
+
+                <div class="tallas">
+                    <span class="talla">CH</span>
+                    <span class="talla">M</span>
+                    <span class="talla">G</span>
+                    <span class="talla">XG</span>
+                </div>
+
+                <button class="agregar" onclick="agregar()">
+                    🛒 Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 4 -->
+
+        <div class="producto">
+
+            <span class="etiqueta">Más vendido</span>
+            <span class="corazon">♡</span>
+
+            <div class="foto">
+                👟
+            </div>
+
+            <div class="info">
+
+                <h3>Tenis Casual</h3>
+
+                <div class="precio">
+                    $599.00
+                </div>
+
+                <div class="tallas">
+                    <span class="talla">23</span>
+                    <span class="talla">24</span>
+                    <span class="talla">25</span>
+                    <span class="talla">26</span>
+                </div>
+
+                <button class="agregar" onclick="agregar()">
+                    🛒 Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BENEFICIOS -->
+
+<section class="beneficios">
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">🚚</div>
+
+        <div>
+            <h3>Envíos a todo México</h3>
+            <p>Tu pedido llega seguro y rápido.</p>
+        </div>
+
+    </div>
+
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">💳</div>
+
+        <div>
+            <h3>Pagos seguros</h3>
+            <p>Variedad de métodos de pago.</p>
+        </div>
+
+    </div>
+
+
+    <div class="beneficio">
+
+        <div class="beneficio-icono">♡</div>
+
+        <div>
+            <h3>Atención personalizada</h3>
+            <p>Estamos para ayudarte.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+    <div>
+
+        <h3>Contáctanos</h3>
+
+        <p>📱 55 3231 1292</p>
+        <p>📷 @jl.boutique</p>
+        <p>💌 jl.boutique@gmail.com</p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Métodos de pago</h3>
+
+        <p>💳 Visa</p>
+        <p>💳 Mastercard</p>
+        <p>🏪 OXXO</p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Síguenos en redes</h3>
+
+        <p>●　◎　♪　♡</p>
+
+    </div>
+
+</section>
+
+
+<!-- WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/525532311292"
+    target="_blank">
+    💬
+</a>
+
+
+<!-- PIE -->
+
+<footer>
+
+    ♡　Gracias por ser parte de <strong>JL BOUTIQUE</strong>　♡
+
+</footer>
+
+
+<script>
+
+let carrito = 0;
+
+function agregar(){o
+
+    carrito++;
+
+    document.getElementById("contador").textContent = carrito;
+
+}
+
+</script>
+
+</body>
+</html>
